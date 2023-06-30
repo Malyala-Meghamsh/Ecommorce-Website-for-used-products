@@ -11,7 +11,7 @@ const itemsSchema = new mongoose.Schema({
         message: String,
         buyerID: String
     }],
-    age: Number,
+    age: String,
     imageURL: String,
     description: String
 });
