@@ -15,12 +15,14 @@ app.use(cors());
 const homeRouter = require('./routes/home');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const productsRouter = require('./routes/products');
 
 // Routes initialize : 
+
+app.use('/product', productsRouter);
 app.use('/', homeRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-
 
 // Server starting
 app.listen(PORT, ()=>{

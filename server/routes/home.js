@@ -26,6 +26,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), async (req,res) 
             item_useful["category"] = item_info["category"];
             item_useful["age"] = item_info["age"];
             
+            item_useful["id"] = item_info._id;
             items_useful.push(item_useful);
         })
         // console.log(items_useful);
