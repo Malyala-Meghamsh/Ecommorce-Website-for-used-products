@@ -1,0 +1,3 @@
+Appling multiple Filters on the items was a very risky ans costly job, so used set instead of arrays to reduce the time complexity.
+Use State was not updating quicklyso, used useEffect hook, triggerered it everytime when my state changes  by including example in its dependency array.
+JS is a async language so states were not updating quickly so in some places i have used direct values from input instead of storing in states, for better performance of website. (Search Filter) 
