@@ -16,13 +16,16 @@ const homeRouter = require('./routes/home');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const productsRouter = require('./routes/products');
-
+const ownerRouter = require('./routes/owner');
+const profileRouter = require('./routes/profile');
 // Routes initialize : 
 
 app.use('/product', productsRouter);
 app.use('/', homeRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/owner', ownerRouter);
+app.use('/profile', profileRouter);
 
 // Server starting
 app.listen(PORT, ()=>{

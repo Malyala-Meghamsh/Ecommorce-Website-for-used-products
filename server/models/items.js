@@ -3,17 +3,21 @@ require('../config/dbConfig');
 
 const itemsSchema = new mongoose.Schema({
     name : String,
+    description: String,
     category: String,
     cost: Number,
     ownerID: String,
+    ownerName: String,
+    ownerEmail: String,
+    buyYear: Number,
+    age: String,
     bids: [{
         bidCost: Number,
         message: String,
         buyerID: String
     }],
-    age: String,
-    imageURL: String,
-    description: String
+    showBids :Boolean,
+    imageURL: [String]
 });
 
 const ItemModel = mongoose.model('Item', itemsSchema);

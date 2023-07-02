@@ -9,19 +9,17 @@ require('dotenv').config();
 require('../config/passport')
 router.use(passport.initialize());
 
-const ItemModel = require('../models/items');
+const UserModel = require('../models/user');
 
 router.get('/:id', passport.authenticate('jwt', {session: false}), async (req,res)=>{
-    console.log(req.user);
-    await ItemModel.findById(req.params.id).then(item => {
-        console.log(item);
+    await UserModel.findById(req.params.id).then(owner => {
+        console.log(89, owner);
         const data = {
-            item : item,
-            user : req.user
+            ownerName : owner.username,
+            ownerEmail: owner.email
         }
         res.send(data);
     })
-    console.log(req.params);
 });
 
 module.exports = router;
