@@ -10,6 +10,7 @@ const itemsSchema = new mongoose.Schema({
     ownerName: String,
     ownerEmail: String,
     buyYear: Number,
+    warranty: Boolean,
     age: String,
     bids: [{
         bidCost: Number,

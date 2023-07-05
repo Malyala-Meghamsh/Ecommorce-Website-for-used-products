@@ -12,7 +12,7 @@ router.use(passport.initialize());
 const ItemModel = require('../models/items');
 
 router.get('/:id', passport.authenticate('jwt', {session: false}), async (req,res)=>{
-    console.log(req.user);
+    // console.log(req.user);
     await ItemModel.findById(req.params.id).then(item => {
         console.log(item);
         const data = {

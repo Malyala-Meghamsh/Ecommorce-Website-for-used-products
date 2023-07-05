@@ -18,15 +18,16 @@ const loginRouter = require('./routes/login');
 const productsRouter = require('./routes/products');
 const ownerRouter = require('./routes/owner');
 const profileRouter = require('./routes/profile');
+const uploadRouter = require('./routes/upload');
 // Routes initialize : 
 
+app.use('/upload', uploadRouter);
 app.use('/product', productsRouter);
 app.use('/', homeRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/owner', ownerRouter);
 app.use('/profile', profileRouter);
-
 // Server starting
 app.listen(PORT, ()=>{
     console.log("Node JS Server is running on port : " + PORT );
