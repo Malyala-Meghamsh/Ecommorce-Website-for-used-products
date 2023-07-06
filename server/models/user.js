@@ -3,7 +3,7 @@ require('../config/dbConfig');
 const UserSchema = new mongoose.Schema(
     {
         username: String,
-        email: String,
+        name: String,
         password: String
     }
 );

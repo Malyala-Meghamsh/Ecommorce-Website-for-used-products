@@ -18,6 +18,7 @@ router.post('/', async (req,res)=>{
         }
         const newUser = new UserModel({
             username : req.body.username,
+            name: req.body.name,
             password : await bcrypt.hash(req.body.password, 10)
         })
         newUser.save().then(user => {

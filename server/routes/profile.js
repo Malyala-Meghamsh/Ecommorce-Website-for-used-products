@@ -15,6 +15,7 @@ router.get('/', passport.authenticate('jwt', {session: false}), async (req,res)=
     console.log(req.user);
     const data = {
         username: req.user.username,
+        name: req.user.name,
         id: req.user._id,
         email: req.user.email
     }

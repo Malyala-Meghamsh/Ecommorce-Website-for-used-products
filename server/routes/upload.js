@@ -79,8 +79,11 @@ router.post('/', async (req, res) => {
                 {
                     const item = new ItemModel(general_info_json);
                     item.save();
-                    res.send(general_info_json);
                     console.log(general_info_json);
+                    res.send({
+                        data: success,
+                        message: "Item Added Successfully"
+                    });
                 }
             } catch (error) {
                 console.log('Error uploading image:', error);
@@ -90,8 +93,11 @@ router.post('/', async (req, res) => {
                 {
                     const item = new ItemModel(general_info_json);
                     item.save();
-                    res.send(general_info_json);
                     console.log(general_info_json);
+                    res.send({
+                        data: success,
+                        message: "Item Added Successfully"
+                    });
                 }
             }
             // console.log(general_info_json["imageURL"]);
@@ -102,7 +108,10 @@ router.post('/', async (req, res) => {
     else{
         const item = new ItemModel(general_info_json);
         item.save();
-        res.send(general_info_json);
+        res.send({
+            data: "success",
+            message: "Item Added Successfully"
+        });
     }
     // res.json({url: urls});
 });
